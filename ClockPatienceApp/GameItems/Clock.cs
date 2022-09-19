@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClockPatienceApp.GameLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace ClockPatienceApp.GameItems
 {
     internal class Clock
     {
+
     }
 }
