@@ -4,5 +4,5 @@ using ClockPatienceApp.GameLogic;
 Console.WriteLine("Hello, World!");
 
 ClockPatienceLogic game = new ClockPatienceLogic();
-game.StartGame();
-game.EndGame();
+//game.StartGame();
+//game.EndGame(0, "LastCard");
