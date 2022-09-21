@@ -36,7 +36,8 @@ namespace ClockPatienceApp.GameLogic
             DeckOfCards.PrintDeckOfCards("Shuffled Deck Of Cards before game", deckOfCardsObject.DeckOfCardsList);
             Clock currentClock = new Clock();
             Clock resultClock = new Clock();
-            FillCardPiles(currentClock, deckOfCardsObject);
+            currentClock = FillCardPiles(currentClock, deckOfCardsObject);
+            PrintClock("Current Clock", currentClock);
             // Game Code goes here
         }
 
@@ -44,15 +45,7 @@ namespace ClockPatienceApp.GameLogic
         {
             int CardCount = 0;
             int PileCount = 0;
-            //foreach(string Card in deckOfCardsObject.DeckOfCardsList)
-            //  {
-            //foreach (List<string> hourHand in clockObject.HourHands) {
-            //clockObject.HourHands.Add(new List<string>());
 
-
-            // pileList.Capacity = 3;
-            // for (int i = 0; i < 3; i++)
-            //  {
             List<string> pileList = new List<string>();
             pileList.Capacity = 4;
             foreach (string Card in deckOfCardsObject.DeckOfCardsList)
@@ -60,34 +53,18 @@ namespace ClockPatienceApp.GameLogic
 
                 pileList.Add(Card);
                 PileCount++;
-                //clockObject.HourHands[List]
-
-                //if (PileCount == 4)
-                //{
-
-                //   PileCount = 0;
-                //}
 
                 if (pileList.Count == 4)
                 {
                     clockObject.HourHands.Add(pileList.ToList());
                     pileList.Clear();
-
-
                 }
-
             }
-            //   }//
-            //  }
-
+            /*
             int RowCount = 0;
             int CardsInClock = 0;
             Console.WriteLine("\nCard List in Clock");
-            //for (int a = 0; a < 13; a++)
-            //{
-
-
-                //for (int i = 0; i < pileList.Count; i++)
+           
                     for (int x = 0; x < 13; x++)
                     {
                 foreach (string Card in clockObject.HourHands[RowCount])
@@ -107,10 +84,38 @@ namespace ClockPatienceApp.GameLogic
 
 
                     }
-            
-            
-         
+            */
+
+
+
             return clockObject;
+        }
+
+        public void PrintClock(string ClockType, Clock clockObject)
+        {
+            int RowCount = 0;
+            int CardsInClock = 0;
+            Console.WriteLine("\nCard List in " + ClockType);
+
+            for (int x = 0; x < 13; x++)
+            {
+                foreach (string Card in clockObject.HourHands[RowCount])
+                {
+                    Console.Write(Card + " ");
+                    //RowCount++;
+                    CardsInClock++;
+                    //c++;
+
+                    if (CardsInClock % 4 == 0)
+                    {
+                        Console.Write("\n");
+                        RowCount++;
+                    }
+
+                }
+
+
+            }
         }
 
         // Method which displays a message to prompt user for an input (to either restart or end the game after the game is finished)
@@ -122,7 +127,7 @@ namespace ClockPatienceApp.GameLogic
             UserInput = Console.ReadLine();
 
 
-            while ( (!(UserInput.Equals("R"))) & (!(UserInput.Equals("E"))))
+            while ((!(UserInput.Equals("R"))) & (!(UserInput.Equals("E"))))
             {
                 Console.WriteLine("Invalid Input.\n\nEnter \"R\" to restart game or \"E\" to end Game");
                 UserInput = Console.ReadLine();
