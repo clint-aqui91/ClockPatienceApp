@@ -36,28 +36,80 @@ namespace ClockPatienceApp.GameLogic
             DeckOfCards.PrintDeckOfCards("Shuffled Deck Of Cards before game", deckOfCardsObject.DeckOfCardsList);
             Clock currentClock = new Clock();
             Clock resultClock = new Clock();
-            currentClock = FillCardPiles(currentClock, deckOfCardsObject);
-
-
+            FillCardPiles(currentClock, deckOfCardsObject);
             // Game Code goes here
         }
 
         public Clock FillCardPiles(Clock clockObject, DeckOfCards deckOfCardsObject)
         {
             int CardCount = 0;
-            foreach(string Card in deckOfCardsObject.DeckOfCardsList)
+            int PileCount = 0;
+            //foreach(string Card in deckOfCardsObject.DeckOfCardsList)
+            //  {
+            //foreach (List<string> hourHand in clockObject.HourHands) {
+            //clockObject.HourHands.Add(new List<string>());
+
+
+            // pileList.Capacity = 3;
+            // for (int i = 0; i < 3; i++)
+            //  {
+            List<string> pileList = new List<string>();
+            pileList.Capacity = 4;
+            foreach (string Card in deckOfCardsObject.DeckOfCardsList)
             {
-              //  for (CardCount = 0; CardCount < 3; CardCount++)
-              //  {
-                    //clockObject.HourHands[List]
-                    //clockObject.PileList.Add(Card);
-                    //if (CardCount%3 == 0)
-                   // {
-                  //      clockObject.ClockList
-                  //  }
+
+                pileList.Add(Card);
+                PileCount++;
+                //clockObject.HourHands[List]
+
+                //if (PileCount == 4)
+                //{
+
+                //   PileCount = 0;
                 //}
-                
+
+                if (pileList.Count == 4)
+                {
+                    clockObject.HourHands.Add(pileList.ToList());
+                    pileList.Clear();
+
+
+                }
+
             }
+            //   }//
+            //  }
+
+            int RowCount = 0;
+            int CardsInClock = 0;
+            Console.WriteLine("\nCard List in Clock");
+            //for (int a = 0; a < 13; a++)
+            //{
+
+
+                //for (int i = 0; i < pileList.Count; i++)
+                    for (int x = 0; x < 13; x++)
+                    {
+                foreach (string Card in clockObject.HourHands[RowCount])
+                        {
+                            Console.Write(Card + " ");
+                            //RowCount++;
+                        CardsInClock++;
+                        //c++;
+
+                            if (CardsInClock %4 == 0)
+                            {
+                                Console.Write("\n");
+                                RowCount++;
+                            }
+
+                        }
+
+
+                    }
+            
+            
+         
             return clockObject;
         }
 

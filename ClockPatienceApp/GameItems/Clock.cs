@@ -10,8 +10,9 @@ namespace ClockPatienceApp.GameItems
     internal class Clock
     {
           private List<List<string>>? _hourHands;
-        //private List<string>? _pileList;
+        private List<string>? _pileList;
 
+        /*
         class ClockList : Clock
         {
             private List<List<string>>? _hourHands;
@@ -22,6 +23,7 @@ namespace ClockPatienceApp.GameItems
                 set { _hourHands = value; }
             }
         }
+        */
 
      //   class PileList : Clock
       //  {
@@ -42,22 +44,23 @@ namespace ClockPatienceApp.GameItems
         {
             //Clock clock = new Clock();
             HourHands = new List<List<string>>();
-            List<string>? pileList = new List<string>();
-            HourHands.Capacity = 12;
-            for (int i = 0; i < 13; i++)
-            {
-                //HourHands.Add(new List<string>());
-                HourHands.Add(new List<string>());
+            PileList = new List<string>();
+            //HourHands.Capacity = 12;
+            //PileList.Capacity = 4;
+           // for (int i = 0; i < 13; i++)
+          //  {
+           //    HourHands.Add(new List<string>());
+              
                 
-            }
+           // }
 
         }
 
-        //  public List<string>? PileList
-        //  {
-        //      get { return _pileList; }
-        //      set { _pileList = value; }
-        //   }
+          public List<string>? PileList
+          {
+              get { return _pileList; }
+              set { _pileList = value; }
+           }
 
         //   public Clock()
         //  {
