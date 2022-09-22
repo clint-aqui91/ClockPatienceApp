@@ -1,0 +1,16 @@
+Decisions rationale:
+
+ArrayLists vs List Arrays:
+	-Lists offer more performance when compared against ArrayLists, since it does not require boxing and unboxing (conversion of value types), since a list is made up of generics & type-safety.
+
+
+Sources: https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-6.0#performance-considerations & https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing
+
+Issue:
+	-Currently the result clock (which holds the exposed cards in hour hands - with matching ranks), adds the card in each hour hand, instead of adding a card to its matching rank hour hand.
+
+Other Notes:
+Classes are built with the Seperation of Concerns in mind (mainly the DeckOfCards Class).
+Methods are kept short with a single reponsibility (to follow the single responsibilty principle).
+
+As an improvement, the methods which perform changes on the clock would be moved inside the Clock class.
