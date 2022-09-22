@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClockPatienceApp.GameItems
 {
+
     /// <summary>
     /// Class <c>DeckOfCards</c> represents a deck of cards made up of 52 cards. It consists primarly consists of a string list.
     /// </summary>
