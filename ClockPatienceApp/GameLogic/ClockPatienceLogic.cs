@@ -9,7 +9,7 @@ namespace ClockPatienceApp.GameLogic
 {
     internal class ClockPatienceLogic
     {
- 
+
         private int ExposedCardsCount { get; set; }
         private string? FinalExposedCard { get; set; }
 
@@ -23,7 +23,7 @@ namespace ClockPatienceApp.GameLogic
 
         }
 
-        public void StartGame(int ExposedCardsCount, string FinalExposedCard)
+        public void StartGame(int exposedCardsCount, string finalExposedCard)
         {
             Console.WriteLine("Welcome to Clock Patience Game");
             DeckOfCards deckOfCardsObject = new DeckOfCards();
@@ -34,6 +34,7 @@ namespace ClockPatienceApp.GameLogic
             PrintClock("Current Clock", currentClock);
 
             resultClock = PrepareResultClock(resultClock);
+            PlayGame(exposedCardsCount, finalExposedCard, currentClock, resultClock);
             // Game Code goes here
         }
 
@@ -53,6 +54,313 @@ namespace ClockPatienceApp.GameLogic
             }
             PrintClock("Result Clock", resultClock);
             return resultClock;
+        }
+
+        public void PlayGame(int exposedCardsCount, string finalExposedCard, Clock currentClock, Clock resultClock)
+        {
+            Console.WriteLine("Count" + currentClock.HourHands.Count.ToString());
+            Console.WriteLine("Capacity" + currentClock.HourHands.Capacity.ToString());
+            Console.Write("Third Card at Pile 2 " + currentClock.HourHands.ElementAt(1).ElementAt(2));
+
+            string CurrentExposedCard;
+            string RankOfExposedCard;
+            CurrentExposedCard = currentClock.HourHands.ElementAt(12).ElementAt(0);
+            exposedCardsCount++;
+            currentClock.HourHands.ElementAt(12).Remove(CurrentExposedCard);
+            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+            Console.WriteLine("Current Exposed Card " + CurrentExposedCard);
+            Console.WriteLine("Rank of Currently Exposed Card" + RankOfExposedCard);
+
+            for (int i = 0; i < 52; i++)
+            {
+
+
+                switch (RankOfExposedCard)
+                {
+                    case "A":
+                        //       if (currentClock.HourHands.ElementAt(0).Any())
+                        //     {
+                        resultClock.HourHands.ElementAt(0).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(0).ElementAt(0);
+                        currentClock.HourHands.ElementAt(0).Remove(CurrentExposedCard);
+                        //      RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //       }
+                        if (!currentClock.HourHands.ElementAt(0).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "2":
+                        //       if (currentClock.HourHands.ElementAt(1).Any())
+                        //    {
+                        resultClock.HourHands.ElementAt(1).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(1).ElementAt(0);
+                        currentClock.HourHands.ElementAt(1).Remove(CurrentExposedCard);
+                        //     RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //    }
+                        if (!currentClock.HourHands.ElementAt(1).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "3":
+                        //   if (currentClock.HourHands.ElementAt(2).Any())
+                        //    {
+                        resultClock.HourHands.ElementAt(2).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(2).ElementAt(0);
+                        currentClock.HourHands.ElementAt(2).Remove(CurrentExposedCard);
+                        //       RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //  }
+                        if (!currentClock.HourHands.ElementAt(11).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+
+
+                        break;
+
+                    case "4":
+                        //  if (currentClock.HourHands.ElementAt(3).Any())
+                        //    {
+                        resultClock.HourHands.ElementAt(3).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(3).ElementAt(0);
+                        currentClock.HourHands.ElementAt(3).Remove(CurrentExposedCard);
+                        //        RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //  }
+                        if (!currentClock.HourHands.ElementAt(3).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "5":
+                        //    if (currentClock.HourHands.ElementAt(4).Any())
+                        //   {
+                        resultClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(4).ElementAt(0);
+                        currentClock.HourHands.ElementAt(4).Remove(CurrentExposedCard);
+                        //                   RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //  }
+                        if (!currentClock.HourHands.ElementAt(4).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "6":
+                        //     if (currentClock.HourHands.ElementAt(5).Any())
+                        //     {
+                        resultClock.HourHands.ElementAt(5).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(5).ElementAt(0);
+                        currentClock.HourHands.ElementAt(5).Remove(CurrentExposedCard);
+                        //   RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //    }
+                        if (!currentClock.HourHands.ElementAt(5).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "7":
+                        //    if (currentClock.HourHands.ElementAt(6).Any())
+                        //    {
+
+                        resultClock.HourHands.ElementAt(6).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(6).ElementAt(0);
+                        currentClock.HourHands.ElementAt(6).Remove(CurrentExposedCard);
+                        //         RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //  }
+                        if (!currentClock.HourHands.ElementAt(6).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "8":
+                        //  if (currentClock.HourHands.ElementAt(7).Any())
+                        //    {
+                        resultClock.HourHands.ElementAt(7).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(7).ElementAt(0);
+                        currentClock.HourHands.ElementAt(7).Remove(CurrentExposedCard);
+                        //             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //  }
+                        if (!currentClock.HourHands.ElementAt(7).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "9":
+                        //   if (currentClock.HourHands.ElementAt(8).Any())
+                        //    {
+                        resultClock.HourHands.ElementAt(8).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(8).ElementAt(0);
+                        currentClock.HourHands.ElementAt(8).Remove(CurrentExposedCard);
+                        //              RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //   }
+                        if (!currentClock.HourHands.ElementAt(8).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "T":
+                        // if (currentClock.HourHands.ElementAt(9).Any())
+                        //{
+                        resultClock.HourHands.ElementAt(9).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(9).ElementAt(0);
+                        currentClock.HourHands.ElementAt(9).Remove(CurrentExposedCard);
+                        //   RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //  }
+
+                        if (!currentClock.HourHands.ElementAt(9).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+
+                        break;
+
+                    case "J":
+                        //if (currentClock.HourHands.ElementAt(10).Any())
+                        //{
+                        resultClock.HourHands.ElementAt(10).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(10).ElementAt(0);
+                        currentClock.HourHands.ElementAt(10).Remove(CurrentExposedCard);
+                        //    RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //}
+                        if (!currentClock.HourHands.ElementAt(10).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+                        break;
+
+                    case "Q":
+                        //    if (currentClock.HourHands.ElementAt(11).Any())
+                        //{
+                        resultClock.HourHands.ElementAt(11).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(11).ElementAt(0);
+                        currentClock.HourHands.ElementAt(11).Remove(CurrentExposedCard);
+                        //RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        //  }
+                        if (!currentClock.HourHands.ElementAt(11).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+
+                        break;
+
+                    case "K":
+                        //if (currentClock.HourHands.ElementAt(12).Any())
+                        //{
+
+                        resultClock.HourHands.ElementAt(12).Add(CurrentExposedCard);
+                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
+
+                        CurrentExposedCard = currentClock.HourHands.ElementAt(12).ElementAt(0);
+                        currentClock.HourHands.ElementAt(12).Remove(CurrentExposedCard);
+
+                        if (!currentClock.HourHands.ElementAt(12).Any())
+                        {
+                            exposedCardsCount++;
+                            EndGame(exposedCardsCount, CurrentExposedCard);
+                        }
+                        else
+                        {
+                            RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
+                        }
+
+
+                        break;
+                }
+                exposedCardsCount++;
+            }
+
         }
 
         public Clock FillCardPiles(Clock clockObject, DeckOfCards deckOfCardsObject)
@@ -195,4 +503,9 @@ namespace ClockPatienceApp.GameLogic
 
 
     }
+
+
+
+
+
 }
