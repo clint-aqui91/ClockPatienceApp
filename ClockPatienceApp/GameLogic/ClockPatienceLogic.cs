@@ -18,66 +18,73 @@ namespace ClockPatienceApp.GameLogic
         {
             ExposedCardsCount = 0;
             FinalExposedCard = "";
-            StartGame(ExposedCardsCount, FinalExposedCard);
-            //EndGame(0, "LastCard");
 
+            StartGame(ExposedCardsCount, FinalExposedCard);
         }
 
         public void StartGame(int exposedCardsCount, string finalExposedCard)
         {
             Console.WriteLine("Welcome to Clock Patience Game");
+
             DeckOfCards deckOfCardsObject = new DeckOfCards();
             DeckOfCards.PrintDeckOfCards("Shuffled Deck Of Cards before game", deckOfCardsObject.DeckOfCardsList);
+
             Clock currentClock = new Clock();
             Clock resultClock = new Clock();
+
             currentClock = FillCardPiles(currentClock, deckOfCardsObject);
             PrintClock("Current Clock", currentClock);
 
             resultClock = PrepareResultClock(resultClock);
             PlayGame(exposedCardsCount, finalExposedCard, currentClock, resultClock);
-            // Game Code goes here
         }
 
         public Clock PrepareResultClock(Clock resultClock)
         {
             string EmptyCard = "00";
+
             List<string> pileList = new List<string>();
             //pileList.Capacity = 4;
             for (int i = 0; i < 4; i++)
             {
-                pileList.Add("00");
+                pileList.Add(EmptyCard);
             }
 
             for (int j = 0; j < 13; j++)
             {
                 resultClock.HourHands.Add(pileList);
             }
-            PrintClock("Result Clock", resultClock);
+
+            //PrintClock("Result Clock", resultClock);
             return resultClock;
         }
 
         public void PlayGame(int exposedCardsCount, string finalExposedCard, Clock currentClock, Clock resultClock)
         {
-            Console.WriteLine("Count" + currentClock.HourHands.Count.ToString());
-            Console.WriteLine("Capacity" + currentClock.HourHands.Capacity.ToString());
-            Console.Write("Third Card at Pile 2 " + currentClock.HourHands.ElementAt(1).ElementAt(2));
+            //Console.WriteLine("Count" + currentClock.HourHands.Count.ToString());
+            //Console.WriteLine("Capacity" + currentClock.HourHands.Capacity.ToString());
+            //Console.Write("Third Card at Pile 2 " + currentClock.HourHands.ElementAt(1).ElementAt(2));
 
             string CurrentExposedCard;
             string RankOfExposedCard;
+
             CurrentExposedCard = currentClock.HourHands.ElementAt(12).ElementAt(0);
             exposedCardsCount++;
+
             currentClock.HourHands.ElementAt(12).Remove(CurrentExposedCard);
+
             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-            Console.WriteLine("Current Exposed Card " + CurrentExposedCard);
-            Console.WriteLine("Rank of Currently Exposed Card" + RankOfExposedCard);
+
+            //Console.WriteLine("Current Exposed Card " + CurrentExposedCard);
+            //Console.WriteLine("Rank of Currently Exposed Card" + RankOfExposedCard);
 
             for (int i = 0; i < 52; i++)
             {
 
-
                 switch (RankOfExposedCard)
                 {
                     case "A":
+
                         resultClock.HourHands.ElementAt(0).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(0).ElementAt(0);
@@ -88,10 +95,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "2":
@@ -106,10 +115,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "3":
@@ -124,11 +135,11 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
-
 
                         break;
 
@@ -143,10 +154,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "5":
@@ -161,10 +174,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "6":
@@ -179,10 +194,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "7":
@@ -197,10 +214,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "8":
@@ -215,10 +234,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "9":
@@ -233,10 +254,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "T":
@@ -252,6 +275,7 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
@@ -271,10 +295,12 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
+
                         break;
 
                     case "Q":
@@ -289,6 +315,7 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
@@ -309,14 +336,15 @@ namespace ClockPatienceApp.GameLogic
                             exposedCardsCount++;
                             EndGame(exposedCardsCount, CurrentExposedCard);
                         }
+
                         else
                         {
                             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
                         }
 
-
                         break;
                 }
+
                 exposedCardsCount++;
             }
 
@@ -329,9 +357,9 @@ namespace ClockPatienceApp.GameLogic
 
             List<string> pileList = new List<string>();
             pileList.Capacity = 4;
+
             foreach (string Card in deckOfCardsObject.DeckOfCardsList)
             {
-
                 pileList.Add(Card);
                 PileCount++;
 
@@ -340,10 +368,8 @@ namespace ClockPatienceApp.GameLogic
                     clockObject.HourHands.Add(pileList.ToList());
                     pileList.Clear();
                 }
+
             }
-
-
-
 
             return clockObject;
         }
@@ -371,7 +397,6 @@ namespace ClockPatienceApp.GameLogic
 
                 }
 
-
             }
         }
 
@@ -379,10 +404,8 @@ namespace ClockPatienceApp.GameLogic
         public string HandleGameCompletionUserPrompts()
         {
             string UserInput;
-            //   Console.WriteLine("Game Ended");
             Console.WriteLine("\nEnter \"R\" to restart game or \"E\" to end Game");
             UserInput = Console.ReadLine();
-
 
             while ((!(UserInput.Equals("R"))) & (!(UserInput.Equals("E"))))
             {
@@ -391,10 +414,7 @@ namespace ClockPatienceApp.GameLogic
                 // Console.WriteLine("User response was " + userInput);
             }
 
-
-
             return UserInput;
-
         }
 
         public void DisplayGameResults(int exposedCardsCount, string finalExposedCard)
@@ -407,37 +427,29 @@ namespace ClockPatienceApp.GameLogic
         // Method which contains the logic after the game is finished.
         public void EndGame(int exposedCardsCount, string finalExposedCard)
         {
-
             Console.WriteLine("\nGame Ended");
+
             DisplayGameResults(exposedCardsCount, finalExposedCard);
+
             string? UserResponse;
+
             UserResponse = HandleGameCompletionUserPrompts();
+
+
             switch (UserResponse)
             {
+
                 case "R":
                     Console.WriteLine("\nRestarting Game");
                     ClockPatienceLogic newGame = new ClockPatienceLogic();
                     newGame.StartGame(0, "");
                     break;
 
-
                 case "E":
                     Console.WriteLine("\nEnding Game");
                     Environment.Exit(0);
                     break;
-
             }
-
-
         }
-
-
-
-
     }
-
-
-
-
-
 }
