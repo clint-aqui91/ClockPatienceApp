@@ -78,15 +78,11 @@ namespace ClockPatienceApp.GameLogic
                 switch (RankOfExposedCard)
                 {
                     case "A":
-                        //       if (currentClock.HourHands.ElementAt(0).Any())
-                        //     {
                         resultClock.HourHands.ElementAt(0).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(0).ElementAt(0);
                         currentClock.HourHands.ElementAt(0).Remove(CurrentExposedCard);
-                        //      RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //       }
+
                         if (!currentClock.HourHands.ElementAt(0).Any())
                         {
                             exposedCardsCount++;
@@ -99,15 +95,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "2":
-                        //       if (currentClock.HourHands.ElementAt(1).Any())
-                        //    {
+
                         resultClock.HourHands.ElementAt(1).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(1).ElementAt(0);
                         currentClock.HourHands.ElementAt(1).Remove(CurrentExposedCard);
-                        //     RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //    }
+
                         if (!currentClock.HourHands.ElementAt(1).Any())
                         {
                             exposedCardsCount++;
@@ -120,15 +113,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "3":
-                        //   if (currentClock.HourHands.ElementAt(2).Any())
-                        //    {
+
                         resultClock.HourHands.ElementAt(2).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(2).ElementAt(0);
                         currentClock.HourHands.ElementAt(2).Remove(CurrentExposedCard);
-                        //       RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //  }
+
                         if (!currentClock.HourHands.ElementAt(11).Any())
                         {
                             exposedCardsCount++;
@@ -143,15 +133,11 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "4":
-                        //  if (currentClock.HourHands.ElementAt(3).Any())
-                        //    {
                         resultClock.HourHands.ElementAt(3).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(3).ElementAt(0);
                         currentClock.HourHands.ElementAt(3).Remove(CurrentExposedCard);
-                        //        RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //  }
+
                         if (!currentClock.HourHands.ElementAt(3).Any())
                         {
                             exposedCardsCount++;
@@ -164,15 +150,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "5":
-                        //    if (currentClock.HourHands.ElementAt(4).Any())
-                        //   {
+
                         resultClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(4).ElementAt(0);
                         currentClock.HourHands.ElementAt(4).Remove(CurrentExposedCard);
-                        //                   RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //  }
+
                         if (!currentClock.HourHands.ElementAt(4).Any())
                         {
                             exposedCardsCount++;
@@ -185,15 +168,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "6":
-                        //     if (currentClock.HourHands.ElementAt(5).Any())
-                        //     {
+
                         resultClock.HourHands.ElementAt(5).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(5).ElementAt(0);
                         currentClock.HourHands.ElementAt(5).Remove(CurrentExposedCard);
-                        //   RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //    }
+
                         if (!currentClock.HourHands.ElementAt(5).Any())
                         {
                             exposedCardsCount++;
@@ -206,16 +186,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "7":
-                        //    if (currentClock.HourHands.ElementAt(6).Any())
-                        //    {
 
                         resultClock.HourHands.ElementAt(6).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(6).ElementAt(0);
                         currentClock.HourHands.ElementAt(6).Remove(CurrentExposedCard);
-                        //         RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //  }
+
                         if (!currentClock.HourHands.ElementAt(6).Any())
                         {
                             exposedCardsCount++;
@@ -228,15 +204,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "8":
-                        //  if (currentClock.HourHands.ElementAt(7).Any())
-                        //    {
+
                         resultClock.HourHands.ElementAt(7).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(7).ElementAt(0);
                         currentClock.HourHands.ElementAt(7).Remove(CurrentExposedCard);
-                        //             RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //  }
+
                         if (!currentClock.HourHands.ElementAt(7).Any())
                         {
                             exposedCardsCount++;
@@ -249,15 +222,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "9":
-                        //   if (currentClock.HourHands.ElementAt(8).Any())
-                        //    {
+
                         resultClock.HourHands.ElementAt(8).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(8).ElementAt(0);
                         currentClock.HourHands.ElementAt(8).Remove(CurrentExposedCard);
-                        //              RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //   }
+
                         if (!currentClock.HourHands.ElementAt(8).Any())
                         {
                             exposedCardsCount++;
@@ -270,15 +240,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "T":
-                        // if (currentClock.HourHands.ElementAt(9).Any())
-                        //{
+
                         resultClock.HourHands.ElementAt(9).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(9).ElementAt(0);
                         currentClock.HourHands.ElementAt(9).Remove(CurrentExposedCard);
-                        //   RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //  }
+
 
                         if (!currentClock.HourHands.ElementAt(9).Any())
                         {
@@ -293,15 +260,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "J":
-                        //if (currentClock.HourHands.ElementAt(10).Any())
-                        //{
+
                         resultClock.HourHands.ElementAt(10).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(10).ElementAt(0);
                         currentClock.HourHands.ElementAt(10).Remove(CurrentExposedCard);
-                        //    RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //}
+
                         if (!currentClock.HourHands.ElementAt(10).Any())
                         {
                             exposedCardsCount++;
@@ -314,15 +278,12 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "Q":
-                        //    if (currentClock.HourHands.ElementAt(11).Any())
-                        //{
+
                         resultClock.HourHands.ElementAt(11).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(11).ElementAt(0);
                         currentClock.HourHands.ElementAt(11).Remove(CurrentExposedCard);
-                        //RankOfExposedCard = CurrentExposedCard.ElementAt(0).ToString();
-                        //  }
+
                         if (!currentClock.HourHands.ElementAt(11).Any())
                         {
                             exposedCardsCount++;
@@ -336,11 +297,9 @@ namespace ClockPatienceApp.GameLogic
                         break;
 
                     case "K":
-                        //if (currentClock.HourHands.ElementAt(12).Any())
-                        //{
+
 
                         resultClock.HourHands.ElementAt(12).Add(CurrentExposedCard);
-                        //currentClock.HourHands.ElementAt(4).Add(CurrentExposedCard);
 
                         CurrentExposedCard = currentClock.HourHands.ElementAt(12).ElementAt(0);
                         currentClock.HourHands.ElementAt(12).Remove(CurrentExposedCard);
@@ -382,31 +341,7 @@ namespace ClockPatienceApp.GameLogic
                     pileList.Clear();
                 }
             }
-            /*
-            int RowCount = 0;
-            int CardsInClock = 0;
-            Console.WriteLine("\nCard List in Clock");
-           
-                    for (int x = 0; x < 13; x++)
-                    {
-                foreach (string Card in clockObject.HourHands[RowCount])
-                        {
-                            Console.Write(Card + " ");
-                            //RowCount++;
-                        CardsInClock++;
-                        //c++;
 
-                            if (CardsInClock %4 == 0)
-                            {
-                                Console.Write("\n");
-                                RowCount++;
-                            }
-
-                        }
-
-
-                    }
-            */
 
 
 
@@ -484,10 +419,7 @@ namespace ClockPatienceApp.GameLogic
                     ClockPatienceLogic newGame = new ClockPatienceLogic();
                     newGame.StartGame(0, "");
                     break;
-                //ClockPatienceLogic newGame = new ClockPatienceLogic();
-                // newGame.StartGame();
 
-                //break;
 
                 case "E":
                     Console.WriteLine("\nEnding Game");
