@@ -14,3 +14,7 @@ Classes are built with the Seperation of Concerns in mind (mainly the DeckOfCard
 Methods are kept short with a single reponsibility (to follow the single responsibilty principle).
 
 As an improvement, the methods which perform changes on the clock would be moved inside the Clock class & better encapsulation in the ClockPatienceLogic class.
+
+The below Git & C# standards and naming conventions were followed:
+https://github.com/ktaranov/naming-convention/blob/master/Git%20Comment%20Convention.md
+https://github.com/ktaranov/naming-convention/blob/master/C%23%20Coding%20Standards%20and%20Naming%20Conventions.md
