@@ -26,7 +26,7 @@ namespace ClockPatienceApp.GameItems
             DeckOfCardsList = BuildDeckOfCards(DeckOfCardsList);
         }
 
-        private List<string> BuildDeckOfCards(List <string> deckOfCards)
+        private List<string> BuildDeckOfCards(List<string> deckOfCards)
         {
             // Here we are ensuring that the List is cleared (any elements and indexes are emptied, in case this method is called from multiple occurences of the application and is passed as an argument containing any elements or indexes.
             deckOfCards.Clear();
@@ -34,8 +34,8 @@ namespace ClockPatienceApp.GameItems
             string Suits = "Suits";
             string NewDeckOfCards = "New Deck Of Cards";
             string ShuffledDeckOfCards = "Shuffled Deck Of Cards";
-            
-            
+
+
             List<string> cardRanks = new List<string>();
             List<string> cardSuits = new List<string>();
 
@@ -44,7 +44,7 @@ namespace ClockPatienceApp.GameItems
             cardSuits = GenerateCardComponents(Suits, cardSuits);
 
             deckOfCards = GenerateDeckOfCards(cardRanks, cardSuits);
-            PrintDeckOfCards(NewDeckOfCards,deckOfCards);
+            PrintDeckOfCards(NewDeckOfCards, deckOfCards);
 
             deckOfCards = ShuffleDeckOfCards(deckOfCards);
             PrintDeckOfCards(ShuffledDeckOfCards, deckOfCards);
@@ -55,12 +55,12 @@ namespace ClockPatienceApp.GameItems
         private static List<string> GenerateDeckOfCards(List<string> cardRanksList, List<string> cardSuitsList)
         {
             string Card;
-            
+
             List<string> deckOfCards = new List<string>();
 
             foreach (string Rank in cardRanksList)
             {
-                foreach(string Suit in cardSuitsList)
+                foreach (string Suit in cardSuitsList)
                 {
                     Card = "";
                     Card = Rank + Suit;
@@ -72,7 +72,7 @@ namespace ClockPatienceApp.GameItems
             return deckOfCards;
         }
 
-        private List<string> ShuffleDeckOfCards (List<string> deckOfCards)
+        private List<string> ShuffleDeckOfCards(List<string> deckOfCards)
         {
             Random random = new Random();
             //int i = 0;
@@ -93,14 +93,14 @@ namespace ClockPatienceApp.GameItems
                 Console.WriteLine("\nRank List size before: ");
                 Console.WriteLine("Ranks List Capacity: " + Convert.ToString(cardComponentsList.Capacity));
                 Console.WriteLine("Ranks List Count: " + Convert.ToString(cardComponentsList.Count));
-               
+
                 cardComponentsList.AddRange(arrayOfRanks);
 
                 PrintCardComponents(componentType, cardComponentsList);
                 Console.WriteLine("\nRank List size after: ");
                 Console.WriteLine("Ranks List Capactiy: " + Convert.ToString(cardComponentsList.Capacity));
                 Console.WriteLine("Ranks List Count: " + Convert.ToString(cardComponentsList.Count));
-                
+
             }
 
             if (componentType == "Suits")
@@ -108,7 +108,7 @@ namespace ClockPatienceApp.GameItems
                 Console.WriteLine("\nSuits List size before: ");
                 Console.WriteLine("Suits List Capacity: " + Convert.ToString(cardComponentsList.Capacity));
                 Console.WriteLine("Suits List Count: " + Convert.ToString(cardComponentsList.Count));
-               
+
                 cardComponentsList.AddRange(arrayOfSuits);
 
                 PrintCardComponents(componentType, cardComponentsList);
@@ -132,7 +132,7 @@ namespace ClockPatienceApp.GameItems
         internal protected static void PrintDeckOfCards(string deckOfCardsType, List<string> deckOfCards)
         {
             int CountOfCardsInDeck = 0;
-            Console.WriteLine("\n"+ deckOfCardsType);
+            Console.WriteLine("\n" + deckOfCardsType);
             foreach (string CardInDeck in deckOfCards)
             {
 
@@ -150,14 +150,14 @@ namespace ClockPatienceApp.GameItems
                 // If end of Cards Deck is reached, print the number of Cards in Deck
                 if (CountOfCardsInDeck == 52)
                 {
-                    Console.WriteLine("\nNumber of Cards in Deck: "+ Convert.ToString(CountOfCardsInDeck));
+                    Console.WriteLine("\nNumber of Cards in Deck: " + Convert.ToString(CountOfCardsInDeck));
                 }
             }
 
         }
     }
 }
-    
-            
-    
+
+
+
 
