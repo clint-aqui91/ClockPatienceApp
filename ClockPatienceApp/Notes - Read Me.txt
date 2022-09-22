@@ -13,4 +13,4 @@ Other Notes:
 Classes are built with the Seperation of Concerns in mind (mainly the DeckOfCards Class).
 Methods are kept short with a single reponsibility (to follow the single responsibilty principle).
 
-As an improvement, the methods which perform changes on the clock would be moved inside the Clock class.
+As an improvement, the methods which perform changes on the clock would be moved inside the Clock class & better encapsulation in the ClockPatienceLogic class.
