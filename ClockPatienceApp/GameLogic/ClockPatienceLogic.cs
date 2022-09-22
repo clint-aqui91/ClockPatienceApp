@@ -9,13 +9,7 @@ namespace ClockPatienceApp.GameLogic
 {
     internal class ClockPatienceLogic
     {
-        //internal void StartGame()
-        //{
-        //   throw new NotImplementedException();
-        //}
-
-
-
+ 
         private int ExposedCardsCount { get; set; }
         private string? FinalExposedCard { get; set; }
 
@@ -38,7 +32,27 @@ namespace ClockPatienceApp.GameLogic
             Clock resultClock = new Clock();
             currentClock = FillCardPiles(currentClock, deckOfCardsObject);
             PrintClock("Current Clock", currentClock);
+
+            resultClock = PrepareResultClock(resultClock);
             // Game Code goes here
+        }
+
+        public Clock PrepareResultClock(Clock resultClock)
+        {
+            string EmptyCard = "00";
+            List<string> pileList = new List<string>();
+            //pileList.Capacity = 4;
+            for (int i = 0; i < 4; i++)
+            {
+                pileList.Add("00");
+            }
+
+            for (int j = 0; j < 13; j++)
+            {
+                resultClock.HourHands.Add(pileList);
+            }
+            PrintClock("Result Clock", resultClock);
+            return resultClock;
         }
 
         public Clock FillCardPiles(Clock clockObject, DeckOfCards deckOfCardsObject)
